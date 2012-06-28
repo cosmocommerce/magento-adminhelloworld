@@ -1,0 +1,5 @@
+# GlobalThinking_AdminHelloWorld Module
+code                                app/code/local/GlobalThinking/AdminHelloWorld
+frontend/layout/*                   app/design/frontend/base/default/layout/
+frontend/template                   app/design/frontend/base/default/template/adminhelloworld
+GlobalThinking_AdminHelloWorld.xml       app/etc/modules/GlobalThinking_AdminHelloWorld.xml

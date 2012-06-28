@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config>
+	<!-- Required module config -->
+	<modules>
+		<GlobalThinking_AdminHelloWorld>
+			<version>0.1.0</version>
+		</GlobalThinking_AdminHelloWorld>
+	</modules>
+	<!-- Frontend routing for the admin page 'adminhelloworld' -->
+	<admin>
+		<routers>
+			<adminhelloworld>
+				<use>admin</use>
+				<args>
+					<module>GlobalThinking_AdminHelloWorld</module>
+					<frontName>adminhelloworld</frontName>
+				</args>
+			</adminhelloworld>
+		</routers>
+	</admin>
+	<!-- Config for the admin panel -->
+	<adminhtml>
+		<!-- Editing the man navigation menu for the admin panel -->
+		<menu>
+			<!-- Create a new menu tab called "Tutorial Menu" -->
+			<tutorial_menu translate="title" module="adminhelloworld">
+				<title>Tutorial Menu</title>
+				<sort_order>9999</sort_order>
+				<!-- Also add a child menu option "My First Page" -->
+				<children>
+					<first_page module="adminhelloworld">
+						<title>My First Page</title>
+						<action>adminhelloworld/index/index</action>
+					</first_page>
+					<second_page module="adminhelloworld">
+						<title>My Second Page</title>
+						<action>adminhelloworld/index/another</action>
+					</second_page>
+				</children>
+			</tutorial_menu>
+			<!-- Add a new child menu option to the System menu tab -->
+			<!-- <system>
+				<children>
+					<another_tutorial_menu>
+						<title>Here Too!</title>
+						<action>adminhelloworld/index/index</action>
+					</another_tutorial_menu>
+				</children>
+			</system> -->
+		</menu>
+	</adminhtml>
+	<!-- Defining the helper class for 'adminhelloworld' -->
+	<global>
+		<helpers>
+			<adminhelloworld>
+				<class>GlobalThinking_AdminHelloWorld_Helper</class>
+			</adminhelloworld>
+		</helpers>
+	</global>
+</config>
